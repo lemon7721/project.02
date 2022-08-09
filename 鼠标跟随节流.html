@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #angel {
+      position: absolute;
+    }
+  </style>
+  </style>
+</head>
+<body>
+  <img src="./angel.gif" alt="" id="angel" />
+  <script>
+    var angel = document.querySelector('#angel');
+    var timer = null;
+      document.addEventListener('mousemove',function(e){
+      if(timer){return}
+      timer = setTimeout(function(){
+      var X = e.pageX;
+      var Y = e.pageY;
+      angel.style.left = X + 'px';
+      angel.style.top = Y + 'px';
+      console.log('ok')
+      }//鼠标移动后再触发我到底合不合适节流
+    ,300)
+    timer = null;})
+  </script>
+</body>
+</html>

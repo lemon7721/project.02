@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/template.js"></script>
+</head>
+<body>
+  <div class="container">
+  </div>
+  <script type = 'text/html'id='tpl-user'>
+    <h1>{{name}}</h1>
+    <!-- 一般来说需要两个大括号 -->
+  </script><!-- 3.4type='text/html'必须写，且两个script顺序不可更改 -->
+  <script>
+    var data = {name:'zs',age:20}//2.定义渲染需要用到的数据
+    var htmlfs = template('tpl-user',data)//4.调用template函数
+    var container = document.querySelector('.container');//5.渲染html结构
+    container.innerHTML = htmlfs;
+  </script>
+</body>
+</html>
